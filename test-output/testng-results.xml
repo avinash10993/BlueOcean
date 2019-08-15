@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="80212" started-at="2019-08-15T07:12:20Z" finished-at="2019-08-15T07:13:40Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="80212" started-at="2019-08-15T07:12:20Z" finished-at="2019-08-15T07:13:40Z">
+      <class name="tests.SampleScenario">
+        <test-method status="PASS" signature="beforeTestRun(org.testng.ITestContext)[pri:0, instance:tests.SampleScenario@52a86356]" name="beforeTestRun" is-config="true" duration-ms="3636" started-at="2019-08-15T07:12:20Z" finished-at="2019-08-15T07:12:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@18bc345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTestRun -->
+        <test-method status="PASS" signature="login()[pri:0, instance:tests.SampleScenario@52a86356]" name="login" duration-ms="76160" started-at="2019-08-15T07:12:24Z" finished-at="2019-08-15T07:13:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="afterTestRun()[pri:0, instance:tests.SampleScenario@52a86356]" name="afterTestRun" is-config="true" duration-ms="396" started-at="2019-08-15T07:13:40Z" finished-at="2019-08-15T07:13:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestRun -->
+      </class> <!-- tests.SampleScenario -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
