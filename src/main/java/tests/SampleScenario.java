@@ -21,6 +21,8 @@ public class SampleScenario extends TestConfiguration {
 	
 	GooglePage google=new GooglePage(driver, report);
 	google.dosomeOps();
+	
+	
 	driver.quit();
 	
   }

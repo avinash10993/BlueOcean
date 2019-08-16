@@ -9,10 +9,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.logging.Level;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -24,8 +27,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.xml.XmlClass;
 
-public class TestConfiguration {
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 
+public class TestConfiguration {
+	
+	public DesiredCapabilities capabilities;
+	public static IOSDriver<?> iosdriver;
 	public Reports report;
 	public WebDriver driver;
 	public Properties prop;
@@ -104,11 +112,10 @@ public class TestConfiguration {
 				driver = new ChromeDriver(options);
 
 			} else if (browserName.equalsIgnoreCase("REMOTE")) {
-				// DesiredCapabilities capability = DesiredCapabilities.chrome();
 				ChromeOptions options = new ChromeOptions();
-				options.setExperimentalOption("w3c", false);
+				options.setExperimentalOption("w3c",false);
 				options.setCapability(ChromeOptions.CAPABILITY, options);
-				driver = new RemoteWebDriver(new URL("http://" + ip + ":" + port + "/wd/hub"), options);
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
 
 			} else {
 				System.out.println("Valid browser request is not submitted");
@@ -119,6 +126,22 @@ public class TestConfiguration {
 		}
 	}
 
+	public void getDeviceConnection() {
+		try {
+			capabilities = new DesiredCapabilities();
+			capabilities.setCapability("report.disable", true);
+			capabilities.setCapability("instrumentApp", true);
+			iosdriver = new IOSDriver<WebElement>(new URL("http://localhost:4723/wd/hub"), capabilities);
+			iosdriver.executeScript("client:client.deviceAction(\"Home\")");
+			iosdriver.setLogLevel(Level.INFO);
+
+		} catch (Exception ex) {
+			Assert.fail(ex.getMessage());
+		}
+	}
+
+	
+	
 	@SuppressWarnings("unchecked")
 	private void loadTestDataFromJson() {
 		try {

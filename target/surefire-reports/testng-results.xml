@@ -2,15 +2,30 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="33" started-at="2019-08-15T06:05:04Z" finished-at="2019-08-15T06:05:04Z">
+  <suite name="Suite" duration-ms="29600" started-at="2019-08-16T07:35:46Z" finished-at="2019-08-16T07:36:15Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="33" started-at="2019-08-15T06:05:04Z" finished-at="2019-08-15T06:05:04Z">
+    <test name="Test" duration-ms="29600" started-at="2019-08-16T07:35:46Z" finished-at="2019-08-16T07:36:15Z">
       <class name="tests.SampleScenario">
-        <test-method status="PASS" signature="login()[pri:0, instance:tests.SampleScenario@7f560810]" name="login" duration-ms="6" started-at="2019-08-15T06:05:04Z" finished-at="2019-08-15T06:05:04Z">
+        <test-method status="PASS" signature="beforeTestRun(org.testng.ITestContext)[pri:0, instance:tests.SampleScenario@573f2bb1]" name="beforeTestRun" is-config="true" duration-ms="2320" started-at="2019-08-16T07:35:46Z" finished-at="2019-08-16T07:35:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1b7c473a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTestRun -->
+        <test-method status="PASS" signature="login()[pri:0, instance:tests.SampleScenario@573f2bb1]" name="login" duration-ms="26833" started-at="2019-08-16T07:35:48Z" finished-at="2019-08-16T07:36:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
+        <test-method status="PASS" signature="afterTestRun()[pri:0, instance:tests.SampleScenario@573f2bb1]" name="afterTestRun" is-config="true" duration-ms="431" started-at="2019-08-16T07:36:15Z" finished-at="2019-08-16T07:36:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestRun -->
       </class> <!-- tests.SampleScenario -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

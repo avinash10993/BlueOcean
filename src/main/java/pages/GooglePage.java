@@ -27,6 +27,7 @@ public class GooglePage extends MasterPage {
 			enterElementValue(searchBox, "hello world");
 			searchBox.sendKeys(Keys.ENTER);
 			report.reportPassEvent("entered text");
+						
 			
 			//clickElement(s);
 			//report.reportPassEvent("clicked successfully");

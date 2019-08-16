@@ -1,8 +1,9 @@
-C:\TestAutothon\AutoFinal\src\main\java\pages\MasterPage.java
-C:\TestAutothon\AutoFinal\src\main\java\pages\SiteRegistrationPage.java
-C:\TestAutothon\AutoFinal\src\main\java\tests\SampleScenario.java
-C:\TestAutothon\AutoFinal\src\main\java\utility\TestConfiguration.java
-C:\TestAutothon\AutoFinal\src\main\java\pages\LoginPage.java
-C:\TestAutothon\AutoFinal\src\main\java\pages\HomePage.java
-C:\TestAutothon\AutoFinal\src\main\java\tests\Infra_only_journey.java
-C:\TestAutothon\AutoFinal\src\main\java\utility\Reports.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\utility\Reports.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\tests\SampleScenario.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\elastic\ExecutionListener.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\utility\TestConfiguration.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\pages\GooglePage.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\elastic\ResultSender.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\elastic\TestStatus.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\pages\MasterPage.java
+C:\TestAutothon\AutoFinalLocal\src\main\java\elastic\RestApiResults.java

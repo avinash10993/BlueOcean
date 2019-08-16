@@ -1,8 +1,4 @@
-pages\LoginPage.class
-pages\HomePage.class
 pages\MasterPage.class
 utility\TestConfiguration.class
-pages\SiteRegistrationPage.class
-tests\Infra_only_journey.class
 utility\Reports.class
 tests\SampleScenario.class
