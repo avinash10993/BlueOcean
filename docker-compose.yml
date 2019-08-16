@@ -1,0 +1,62 @@
+version: '3.7'
+networks:
+  private:
+    driver: overlay
+services:
+  hub:
+   image: selenium/hub
+   ports:
+     - "4444:4444"
+   volumes:
+     - /dev/shm:/dev/shm
+   environment:
+     GRID_BROWSER_TIMEOUT: 360000
+     GRID_TIMEOUT: 360000
+     GRID_CLEAN_UP_CYCLE: 600000
+     GRID_UNREGISTER_IF_STILL_DOWN_AFTER: 500000
+     GRID_NEW_SESSION_WAIT_TIMEOUT: 6000
+   deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]     
+  chrome:
+    image: selenium/node-chrome-debug
+    entrypoint: 
+      bash -c 'SE_OPTS="-host $$HOSTNAME -port 5900" /opt/bin/entry_point.sh'
+    ports:
+     - "5900:5900"
+    volumes:
+      - /dev/shm:/dev/shm
+    environment:
+      HUB_HOST: hub
+      HUB_PORT: 4444
+      NODE_MAX_INSTANCES: 5
+      NODE_MAX_SESSION: 5
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: none
+      placement:
+        constraints: [node.role == manager]
+  chromeBuddy:
+    image: selenium/node-chrome-debug
+    entrypoint: 
+      bash -c 'SE_OPTS="-host $$HOSTNAME -port 5901" /opt/bin/entry_point.sh'
+    ports:
+     - "5901:5901"
+    volumes:
+      - /dev/shm:/dev/shm
+    environment:
+      HUB_HOST: hub
+      HUB_PORT: 4444
+      NODE_MAX_INSTANCES: 5
+      NODE_MAX_SESSION: 5
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: none
+      placement:
+        constraints: [node.role == manager]     
